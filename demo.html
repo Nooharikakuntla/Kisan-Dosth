@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Information</title>
+    <!-- Add the Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-4">
+        <h1>Crop Information</h1>
+    </header>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="crop-list bg-white p-3 rounded shadow cursor-pointer ">
+                    <h2 class="mb-3">Crop List</h2>
+                    <ul id="crop-list" class="list-unstyled">
+                        <li data-crop="wheat" class="crop-item p-2 mb-2 bg-light rounded cursor-pointer">Wheat</li>
+                        <li data-crop="rice" class="crop-item p-2 mb-2 bg-light rounded cursor-pointer">Rice</li>
+                        <!-- Add more crops here -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="crop-info bg-white p-3 rounded shadow">
+                    <h2 class="mb-3">Crop Information</h2>
+                    <div id="crop-info-content">
+                        <p>Select a crop to see information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add the Bootstrap and jQuery JavaScript links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cropList = document.getElementById("crop-list");
+            const cropInfo = document.getElementById("crop-info-content");
+
+            const cropData = {
+                wheat: {
+                    Land: "5 acres",
+                    Water: "100,000 gallons",
+                    Equipment: "Tractor, harvester",
+                    Pesticides: "Fungicides, herbicides",
+                    Duration: "120 days",
+                    Expenditure: "$10,000",
+                    Yield: "500 bushels per acre",
+                },
+                rice: {
+                    Land: "3 acres",
+                    Water: "150,000 gallons",
+                    Equipment: "Rice planter, combine",
+                    Pesticides: "Insecticides, herbicides",
+                    Duration: "150 days",
+                    Expenditure: "$12,000",
+                    Yield: "3000 pounds per acre",
+                },
+                // Add more crop data here
+            };
+
+            function displayCropInfo(crop) {
+                if (cropData[crop]) {
+                    const info = cropData[crop];
+                    cropInfo.innerHTML = `
+                        <p>Land: ${info.Land}</p>
+                        <p>Water: ${info.Water}</p>
+                        <p>Equipment: ${info.Equipment}</p>
+                        <p>Pesticides: ${info.Pesticides}</p>
+                        <p>Duration: ${info.Duration}</p>
+                        <p>Expenditure: ${info.Expenditure}</p>
+                        <p>Yield: ${info.Yield}</p>
+                    `;
+                } else {
+                    cropInfo.innerHTML = "<p>Select a crop to see information.</p>";
+                }
+            }
+
+            cropList.addEventListener("click", (event) => {
+                if (event.target.classList.contains("crop-item")) {
+                    const selectedCrop = event.target.getAttribute("data-crop");
+                    displayCropInfo(selectedCrop);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

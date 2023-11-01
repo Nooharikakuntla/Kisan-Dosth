@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url(agbg3.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .team-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px; /* Adjust the width as needed */
+            width: 100%;
+        }
+        .team-member {
+            flex: 0 0 calc(33.33% - 20px);
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 20px 0;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            margin: 3px;
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+        .team-member img {
+            max-width: 30%;
+            border-radius: 50%;
+        }
+        .team-member h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+        .team-member p {
+            margin: 0;
+            font-size: 1.1em;
+            color: #777;
+        }
+        .team-member-message {
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .navbar {
+            background-color: burlywood;
+             overflow: hidden;
+             padding-bottom: 15px;
+             padding-left: 8px ;
+             margin: 10px;
+             height :30px;
+             width: 300px;
+             border-radius: 10px;
+             padding-top: 3px;
+         }
+         .navbar a {
+             float: right;
+             font-size: 16px;
+             color: bisque;
+             text-align: center;
+             padding: 14px 16px;
+             text-decoration: none;
+         }
+         .navbar a:hover {
+             background-color: cornsilk;
+             color: #333;
+             padding: 2px;
+         }
+         img{
+            width: 50px;
+            height: 40px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        
+        <a href="Our Team.html">Our Team</a>
+        <a href="home.html">Explore</a>
+        <a href="main.html">Home</a>
+        <img src="log.jpg" alt="">
+    </div>
+    <br>
+    <center><img src="log.jpg".jpg" style="width: 200px; height: 100px; "></center>
+    <h1>Our Team</h1>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="hicw.png" alt="Nooharika">
+            <h3>Nooharika</h3>
+            <p>Founder & Developer</p>
+            <p class="team-member-message">"From sowing the first lines of code to nurturing the growth of this website, I'm here to cultivate a digital farming experience that's as rich as the soil we love."</p>
+        </div>
+        <div class="team-member">
+            <img src="hic.jpg" alt="Dharmarjun">
+            <h3>Dharmarjun</h3>
+            <p>Developer & Agricultural Specialist</p>
+            <p class="team-member-message">"Combining my tech savvy with a passion for agriculture, I've plowed through challenges to create a website that helps you plow your fields more effectively."</p>
+        </div>
+        <div class="team-member">
+            <img src="hicw.png" alt="Srujana">
+            <h3>Srujan</h3>
+            <p>Developer & Livestock Expert</p>
+            <p class="team-member-message">"Just as I care for livestock, I've tended to every line of code. Our website is a stable platform built to support your farming journey from the ground up."</p>
+        </div>
+    </div>
+</body>
+</html>
+

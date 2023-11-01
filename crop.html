@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            background-image: url(cp.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+          
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .crop-list {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            background-image: url(cp1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .crop-list h2 {
+            margin-bottom: 10px;
+        }
+
+        .crop-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .crop-list li {
+            cursor: pointer;
+            margin: 5px 0;
+            padding: 5px 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            background-image: url(cbg.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .crop-list li:hover {
+            background-color: #ddd;
+        }
+
+        .crop-info {
+            margin-left: 20px;
+            flex: 2;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            background-image: url(cp1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .crop-info h2 {
+            margin-bottom: 10px;
+        }
+
+        .crop-info-content {
+            line-height: 1.6;
+        }
+        h1{text-align: center;}
+        
+       .mp  {
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+       .navbar {
+        background-color: burlywood;
+         overflow: hidden;
+         padding-bottom: 15px;
+         padding-left: 8px ;
+         margin: 10px;
+         height :30px;
+         width: 300px;
+         border-radius: 10px;
+         padding-top: 3px;
+     }
+     .navbar a {
+         float: right;
+         font-size: 16px;
+         color: bisque;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+     }
+     .navbar a:hover {
+         background-color: cornsilk;
+         color: #333;
+         padding: 2px;
+     }
+     img{
+        width: 50px;
+        height: 40px;
+
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        
+        <a href="Our Team.html">Our Team</a>
+        <a href="home.html">Explore</a>
+        <a href="main.html">Home</a>
+        <img src="log.jpg" alt="">
+    </div>
+    <center><img src="log.jpg".jpg" style="width: 200px; height: 100px; "></center>
+    
+        <h1>Kisan Dosth - CropWise Insights: Cultivating Success</h1>
+    <p class="mp">Delve into the world of farming with CropWise Insights, where you can access detailed information on a wide range of crops. <br>
+        From land and water needs to essential equipment, pesticides, growth duration, expenditure, and anticipated yields, 
+        <br>we've got you covered. Make informed decisions for your agriculture journey with our in-depth crop knowledge hub.</p>
+    <div class="container">
+        <div class="crop-list">
+            <h2>Crop List</h2>
+            <ul id="crop-list">
+                <li data-crop="wheat">Wheat</li>
+                <li data-crop= "Barley">Barley</li>
+                <li data-crop="Mustard">Mustard</li>
+                <li data-crop="Peas">Peas</li>
+                <li data-crop="Sunflower">Sunflower</li>
+                <li data-crop="Chilli">Chilli</li>
+                <li data-crop="Rice">Rice</li>
+                <li data-crop="Cotton">Cotton</li>
+                <li data-crop="Groundnut">Groundnut</li>
+                <li data-crop="SugarCane">Sugarcane</li>
+                <li data-crop="Jowar">Jowar</li>
+                <li data-crop="Watermelon">Watermelon</li>
+                <li data-crop="Cucumber">Cucumber</li>
+                <li data-crop="Pumpkin">Pumpkin</li>
+                <li data-crop="Muskmelon">Muskmelon</li>
+                <!-- Add more crops here -->
+            </ul>
+        </div>
+        <div class="crop-info">
+            <h2>Crop Information</h2>
+            <div id="crop-info-content">
+                <p>Select a crop to see information.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cropList = document.getElementById("crop-list");
+            const cropInfo = document.getElementById("crop-info-content");
+
+            const cropData = {
+                
+
+                wheat:{
+
+                
+ Land: "Approximately 1 acre",
+ Water: "15-20 inches (375-500 mm) during the growing season",
+ Equipment: "Plow, seed drill, harvester",
+ Pesticides: "Fungicides for diseases like rust, smut; Insecticides for pests like aphids.",
+ Duration: "100-120 days",
+ Expenditure: "Varies widely based on location, but can range from 25,000 to 40,000 INR per acre.",
+ Yield: "Around 15-25 quintals per acre.",
+                },
+Barley : {
+ Land: "Approximately 1 acre",
+ Water: "15-20 inches (375-500 mm) during the growing season",
+ Equipment: "Plow, seed drill, harvester",
+ Pesticides: "Fungicides for diseases like rust, smut; Insecticides for pests like aphids.",
+ Duration: "90-110 days",
+ Expenditure: "Varies widely based on location, but can range from 20,000 to 35,000 INR per acre.",
+Yield: "Around 10-15 quintals per acre.",
+},
+Mustard :{
+
+
+ Land: "Approximately 0.5 acre",
+ Water: "12-15 inches (300-375 mm) during the growing season",
+ Equipment: "Plow, seed drill, harvester",
+ Pesticides: "Fungicides for diseases like alternaria blight; Insecticides for pests like aphids.",
+ Duration: "90-110 days",
+ Expenditure: "Varies widely based on location, but can range from 15,000 to 30,000 INR per acre.",
+ Yield: "Around 8-12 quintals per acre.",
+},
+Peas:{
+ Land: "Approximately 0.25 acre",
+Water: "20-25 inches (500-625 mm) during the growing season",
+ Equipment: "Plow, seed drill, trellis",
+ Pesticides: "Insecticides for pests like aphids, caterpillars.",
+ Duration: "70-80 days",
+ Expenditure: "Varies widely based on location, but can range from 20,000 to 35,000 INR per acre.",
+ Yield: "Around 4-6 quintals per acre.",
+},
+
+Sunflower:{
+
+Land: "Approximately 1 acre",
+Water: "20-25 inches (500-625 mm) during the growing season",
+Equipment: "Plow, seed drill, combine harvester",
+Pesticides: "Insecticides for pests like aphids and borers.",
+Duration: "90-120 days",
+Expenditure: "Varies widely based on location, but can range from 30,000 to 45,000 INR per acre.",
+Yield: "Around 12-20 quintals per acre.",
+},
+Chilli :{
+
+Land: "Approximately 0.25 acre",
+Water: "20-25 inches (500-625 mm) during the growing season",
+Equipment: "Plow, seed drill, irrigation system",
+Pesticides: "Fungicides for diseases like anthracnose; Insecticides for pests like aphids.",
+Duration: "120-150 days",
+Expenditure: "Varies widely based on location, but can range from 40,000 to 60,000 INR per acre.",
+ield: "Around 2-3 quintals per acre.",
+},
+Rice:{
+
+Land: "Approximately 1 acre",
+Water: "35-40 inches (875-1000 mm) during the growing season (requires a lot of water)",
+Equipment: "Plow, rice transplanter, combine harvester",
+Pesticides: "Herbicides for weed control, insecticides for pests like stem borers.",
+Duration: "120-150 days",
+Expenditure: "Varies widely based on location and whether it's rainfed or irrigated, but can range from 40,000 to 60,000 INR per acre.",
+Yield: "Around 20-30 quintals per acre.",
+},
+Cotton:{
+
+Land: "Approximately 1 acre",
+Water: "20-25 inches (500-625 mm) during the growing season",
+Equipment: "Plow, cotton planter, cotton picker",
+Pesticides: "Insecticides for pests like bollworms and aphids.",
+Duration: "150-180 days",
+Expenditure: "Varies widely based on location, but can range from 30,000 to 50,000 INR per acre.",
+Yield: "Around 8-12 quintals per acre.",
+},
+
+Groundnut:{
+
+Land: "Approximately 1 acre",
+Water: "20-25 inches (500-625 mm) during the growing season",
+Equipment: "Plow, seed drill, groundnut digger",
+Pesticides: "Fungicides for diseases like rust; Insecticides for pests like aphids.",
+Duration: "90-120 days",
+Expenditure: "Varies widely based on location, but can range from 25,000 to 40,000 INR per acre.",
+Yield: "Around 8-12 quintals per acre.",
+},
+Sugarcane:{
+
+Land: "Approximately 1 acre",
+Water: "50-60 inches (1250-1500 mm) during the growing season",
+Equipment: "Sugarcane planter, harvester",
+Pesticides: "Herbicides for weed control, insecticides for pests like sugarcane borers.",
+Duration: "12-18 months (longer duration crop)",
+Expenditure: "Varies widely based on location, but can range from 40,000 to 60,000 INR per acre.",
+Yield: "Around 70-100 quintals per acre.",
+},
+Jowar:{
+
+Land: "Approximately 1 acre",
+Water: "15-20 inches (375-500 mm) during the growing season",
+Equipment: "Plow, seed drill, combine harvester",
+Pesticides: "Insecticides for pests like shoot fly and stem borer.",
+Duration: "90-110 days",
+Expenditure: "Varies widely based on location, but can range from 20,000 to 35,000 INR per acre.",
+Yield: "Around 8-12 quintals per acre.",
+},
+Watermelon:{
+
+Land: "Approximately 0.5 acre",
+Water: "20-25 inches (500-625 mm) during the growing season",
+Equipment: "Plow, irrigation system, harvesting tools",
+Pesticides: "Insecticides for pests like aphids and fruit flies.",
+Duration: "75-90 days",
+Expenditure: "Varies widely based on location, but can range from 15,000 to 30,000 INR per acre.",
+Yield: "Around 8-12 tons per acre."
+},
+Cucumber:{
+
+Land: "Approximately 0.25 acre",
+Water: "20-25 inches (500-625 mm) during the growing season",
+Equipment: "Plow, irrigation system, trellis",
+Pesticides: "Insecticides for pests like aphids and cucumber beetles.",
+Duration: "50-70 days",
+Expenditure: "Varies widely based on location, but can range from 20,000 to 35,000 INR per acre.",
+Yield: "Around 2-4 tons per acre.",
+},
+Pumpkin :{
+
+Land: "Approximately 0.25 acre",
+Water: "20-25 inches (500-625 mm) during the growing season",
+Equipment: "Plow, irrigation system",
+Pesticides: "Insecticides for pests like aphids and squash bugs.",
+Duration: "80-100 days",
+Expenditure: "Varies widely based on location, but can range from 20,000 to 35,000 INR per acre.",
+EYield: "Around 4-6 tons per acre.",
+},
+Muskmelon :{
+
+
+
+Land: "Approximately 0.25 acre",
+Water: "20-25 inches (500-625 mm) during the growing season",
+Equipment: "Plow, irrigation system",
+Pesticides: "Insecticides for pests like aphids and spider mites.",
+Duration: "80-100 days",
+Expenditure: "Varies widely based on location, but can range from 20,000 to 35,000 INR per acre.",
+Yield: "Around 4-6 tons per acre."
+},
+            };
+
+
+            function displayCropInfo(crop) {
+                if (cropData[crop]) {
+                    const info = cropData[crop];
+                    cropInfo.innerHTML = `
+                        <p>Land: ${info.Land}</p>
+                        <p>Water: ${info.Water}</p>
+                        <p>Equipment: ${info.Equipment}</p>
+                        <p>Pesticides: ${info.Pesticides}</p>
+                        <p>Duration: ${info.Duration}</p>
+                        <p>Expenditure: ${info.Expenditure}</p>
+                        <p>Yield: ${info.Yield}</p>
+                    `;
+                } else {
+                    cropInfo.innerHTML = "<p>Select a crop to see information.</p>";
+                }
+            }
+
+            cropList.addEventListener("click", (event) => {
+                if (event.target.tagName === "LI") {
+                    const selectedCrop = event.target.getAttribute("data-crop");
+                    displayCropInfo(selectedCrop);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

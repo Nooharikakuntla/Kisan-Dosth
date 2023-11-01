@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #336699;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav {
+            background-color: #eee;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            display: none;
+        }
+
+        h2 {
+            color: #336699;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crop Information</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#wheat">Wheat</a></li>
+            <li><a href="#barley">Barley</a></li>
+            <li><a href="#mustard">Mustard</a></li>
+            <li><a href="#peas">Peas</a></li>
+            <li><a href="#sunflower">Sunflower</a></li>
+            <li><a href="#chilli">Chilli</a></li>
+            <li><a href="#rice">Rice</a></li>
+            <li><a href="#cotton">Cotton</a></li>
+            <li><a href="#groundnut">Groundnut</a></li>
+            <li><a href="#sugarcane">Sugarcane</a></li>
+            <li><a href="#jowar">Jowar</a></li>
+            <li><a href="#watermelon">Watermelon</a></li>
+            <li><a href="#cucumber">Cucumber</a></li>
+            <li><a href="#pumpkin">Pumpkin</a></li>
+            <li><a href="#muskmelon">Muskmelon</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="wheat">
+            <h2>Wheat</h2>
+            <p>Land required: XX acres</p>
+            <p>Water required: XX gallons</p>
+            <p>Equipment: Equipment List</p>
+            <p>Pesticides: Disease Name - Pesticide Name</p>
+            <p>Duration: XX days</p>
+            <p>Expenditure: XX Rupees</p>
+            <p>Yield: XX Rupees</p>
+        </section>
+        <section id="barley">
+            <h2>Barley</h2>
+            <p>Land required: XX acres</p>
+            <p>Water required: XX gallons</p>
+            <p>Equipment: Equipment List</p>
+            <p>Pesticides: Disease Name - Pesticide Name</p>
+            <p>Duration: XX days</p>
+            <p>Expenditure: XX Rupees</p>
+            <p>Yield: XX Rupees</p>
+        </section>
+        <section id="mustard">
+            <h2>Mustard</h2>
+            <p>Land required: XX acres</p>
+            <p>Water required: XX gallons</p>
+            <p>Equipment: Equipment List</p>
+            <p>Pesticides: Disease Name - Pesticide Name</p>
+            <p>Duration: XX days</p>
+            <p>Expenditure: XX Rupees</p>
+            <p>Yield: XX Rupees</p>
+        </section>
+        <!-- Add more crop sections here -->
+    </main>
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const cropId = link.getAttribute('href').substring(1); // Remove the '#' character
+                showCropInfo(cropId);
+            });
+        });
+
+        function showCropInfo(cropId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(cropId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
